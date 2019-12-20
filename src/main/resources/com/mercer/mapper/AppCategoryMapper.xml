@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mercer.mapper.AppCategoryMapper">
+  <select id="queryAppCategoriesLevelOne" resultType="com.mercer.pojo.AppCategory">
+      SELECT id,categoryCode,categoryName,parentId
+        FROM app_category
+        WHERE parentId IS NULL
+  </select>
+
+  <select id="queryLevelByParentId" resultType="com.mercer.pojo.AppCategory">
+        SELECT id,categoryCode,categoryName,parentId
+        FROM app_category
+        WHERE parentId = #{levelParentId}
+  </select>
+</mapper>

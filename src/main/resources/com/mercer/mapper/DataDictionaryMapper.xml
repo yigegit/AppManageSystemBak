@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mercer.mapper.DataDictionaryMapper">
+
+    <select id="queryAllStatus" resultType="com.mercer.pojo.DataDictionary">
+      SELECT id,typeCode,valueId,valueName
+        FROM data_dictionary
+        WHERE typeCode = 'APP_STATUS'
+    </select>
+    <select id="queryAllFlatforms" resultType="com.mercer.pojo.DataDictionary">
+        SELECT id,typeCode,valueId,valueName
+        FROM data_dictionary
+        WHERE typeCode = 'APP_FLATFORM'
+    </select>
+</mapper>
